@@ -1,0 +1,44 @@
+#include<stdio.h>
+int main()
+{char symbol1, symbol2;
+char wish;
+
+
+printf("Do you want diamond shape ? (y/n)");
+scanf(" %c", &wish);
+
+if ( wish == 'y' || wish == 'Y')
+
+{
+
+
+    printf("Enter 1st symbol : ");
+    scanf(" %c", &symbol1);
+
+    printf("Enter 2nd symbol : ");
+    scanf(" %c", &symbol2);
+
+for (int i=1; i<=10; i++){
+        for(int j=1; j<i; j++){
+            printf("%c", symbol1);
+        }
+        printf("\n");
+    }
+    for (int i=10; i>=1; i--){
+        for(int j=1; j<i; j++)
+        {
+            printf("%c", symbol2);
+        }
+        printf("\n");
+    }
+}
+else if (wish == 'n' || wish =='N') {
+    printf("Thank you\n ");
+}
+else
+{
+    printf("invalid\n");
+}
+
+    return 0;
+}
