@@ -1,0 +1,74 @@
+#include<stdio.h>
+int main()
+{
+    printf("____  Welcome to saara-code  ____\n");
+    int marks[5];
+
+
+    printf("Enter 5 marks : \n");
+    for (int i=0 ; i<5; i++){
+        printf("Enter mark %d :" ,i+1);
+        scanf(" %d",&marks[i]);
+
+        if (marks[i]<0 || marks[i]>100 ){
+            printf("Invalid! Marks must be 0 - 100. Try again.\n");
+            i--;
+        }
+
+
+    }
+    printf("\nYou entered :\n");
+    for (int i=0; i<5; i++){
+        printf("%d ",marks[i]);
+    }
+    int max = marks[0];
+    for( int i=1; i<5; i++) {
+        if(marks[i] > max){
+            max = marks[i];
+        }
+    }
+    printf("\nHighest mark is:%d\n ", max);
+
+    int total = 0;
+
+    for (int i=0; i<5; i++){
+        total = total + marks[i];
+    }
+    float avg = total/5 ;
+
+
+    int pass = 0, fail = 0;
+
+    for (int i=0; i<5; i++){
+        if(marks[i] >= 40 ){
+            pass++;
+        } else {
+        fail++;}
+    }
+    printf("\n---Report Card---\n");
+    printf("Total: %d\n", total);
+    printf("Average: %2f\n", avg);
+    printf("Passed: %d\n", pass);
+    printf("Failed: %d\n", fail);
+    printf("Highest; %d\n", max);
+    int count75 =0, count40 =0;
+    for( int i=0; i<5; i++){
+        if(marks[i] >= 75) count75++;
+        if (marks[i] >= 40) count40++;
+
+    }
+    if (count75 == 5){
+        printf("Result: PASS - commander!\n");
+    }
+    else if (count40 == 5) {
+        printf("Result: PASS - good job!\n");
+    }
+    else if (count40 == 0) {
+        printf("Result: Fail -Try again\n");
+    }
+
+
+
+    return 0;
+
+}
